@@ -334,8 +334,8 @@ def plot_dalitz(m1, m2, xlab='', ylab='', masses=[], boundary=False,
                 weights=None, log=False, logz=False, bininfo=False, 
                 ax=None, **kwargs):
     # awkward to numpy if needed
-    m1a = m1.to_numpy() if m1 is ak.highlevel.Array else m1
-    m2a = m2.to_numpy() if m2 is ak.highlevel.Array else m2
+    m1a = m1.to_numpy() if m1 is ak.highlevel.Array else np.asarray(m1)
+    m2a = m2.to_numpy() if m2 is ak.highlevel.Array else np.asarray(m2)
     
     nan_indices = np.isnan(m1a) | np.isnan(m2a)
     
